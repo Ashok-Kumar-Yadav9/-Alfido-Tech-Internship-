@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Background Color Changer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="task3.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-3xl font-bold mb-4">Random Background Color Changer</h1>
+    <p class="mb-6">Click the button below to change the background to a random color. Notice the smooth transition!</p>
+    
+    <button id="changeColorBtn" class="btn">Change Background Color</button>
+    <button id="resetBtn" class="btn reset-btn">Reset to White</button>
+    
+    <div class="color-display" id="colorDisplay">Current Background: #ffffff (White)</div>
+  </div>
+
+  <script>
+    const changeColorBtn = document.getElementById('changeColorBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const colorDisplay = document.getElementById('colorDisplay');
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    changeColorBtn.addEventListener('click', function() {
+      const randomColor = getRandomColor();
+      document.body.style.backgroundColor = randomColor;
+      colorDisplay.textContent = 'Current Background: ${randomColor} (${getColorName(randomColor)})';
+    });
+
+    resetBtn.addEventListener('click', function() {
+      document.body.style.backgroundColor = '#ffffff';
+      colorDisplay.textContent = 'Current Background: #ffffff (White)';
+    });
+
+    function getColorName(hex) {
+      const colors = {
+        '#FF0000': 'Red',
+        '#00FF00': 'Green',
+        '#0000FF': 'Blue',
+        '#FFFF00': 'Yellow',
+        '#FF00FF': 'Magenta',
+        '#00FFFF': 'Cyan'
+      };
+      return colors[hex.toUpperCase()] || 'Random';
+    }
+  </script>
+</body>
+</html>
