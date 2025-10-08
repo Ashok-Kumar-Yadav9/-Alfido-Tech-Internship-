@@ -1,70 +1,32 @@
-
 body {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  min-height: 100vh;
-  font-family: 'Inter', sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 30px;
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 10px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    border-radius: 10px;
 }
 
-.task-checkbox {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #e5e7eb;
-  border-radius: 50%;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.3s ease;
+h1 {
+    color: #4caf50;
 }
 
-.task-checkbox:checked {
-  background-color: #10b981;
-  border-color: #10b981;
+img {
+    max-width: 150px;
+    margin: 20px 0;
 }
 
-.task-checkbox:checked::after {
-  content: '✓';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.task-item {
-  transform: translateX(100%);
-  animation: slideIn 0.5s ease-out forwards;
-}
-
-@keyframes slideIn {
-  to {
-    transform: translateX(0);
-  }
-}
-
-.delete-btn {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.task-item:hover .delete-btn {
-  opacity: 1;
-}
-
-.fade-out {
-  animation: fadeOut 0.4s ease-out forwards;
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: scale(0.9);
-  }
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    align-items: centerS;
 }
